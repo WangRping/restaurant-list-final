@@ -15,12 +15,15 @@
   <header>
     <!-- navigation -->
     <nav class="navbar navbar-light bg-light">
-      <div class="container">
+      <div class="container d-flex justify-content-start ">
         <a class="navbar-brand" href="/">
           <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/6227/restaurant-list-logo.png"
             width="30" height="30" class="d-inline-block align-top" alt="我的餐廳清單">
           我的餐廳清單
         </a>
+        <button type="button" class="navbar-brand border-0 bg-transparent" aria-current="page" data-bs-toggle="modal"
+          data-bs-target="#newRestaurantModal">
+          <i class="fas fa-plus pr-2"></i> 新增餐廳</button>
       </div>
     </nav>
 
@@ -28,6 +31,61 @@
   </header>
 
   {{{body}}}
+
+  {{!-- MODAL --}}
+  <div class="modal fade" id="newRestaurantModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">新增餐廳</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form class="modal-body" method="POST" action="/new">
+          <div>
+            <label class="form-label" for="">餐廳名稱 :</label>
+            <input type="text" class="form-control" name="name" id="name" required>
+          </div>
+          <div>
+            <label for="">英文名稱 :</label>
+            <input type="text" class="form-control" name="name_en" id="name_en">
+          </div>
+          <div>
+            <label for="">分類 :</label>
+            <input type="text" class="form-control" name="category" id="category">
+          </div>
+          <div>
+            <label for="">地址 :</label>
+            <input type="text" class="form-control" name="location" id="location">
+          </div>
+          <div>
+            <label for="">google_map_url :</label>
+            <input type="text" class="form-control" name="google_map" id="google_map">
+          </div>
+          <div>
+            <label for="">電話 :</label>
+            <input type="text" class="form-control" name="phone" id="phone">
+          </div>
+          <div>
+            <label for="">評分 :</label>
+            <input type="number" name="rating" class="form-control" id="rating" min="1" max="5" step="0.1">
+          </div>
+          <div>
+            <label for="">圖片Url :</label>
+            <input type="text" class="form-control" name="image" id="image">
+          </div>
+          <div>
+            <label for="">介紹 :</label>
+            <textarea class="form-control" name="description" id="description" rows="5" cols="50"
+              wrap="soft"></textarea>
+          </div>
+
+
+          <button type="button" class="btn btn-secondary mt-2" data-bs-dismiss="modal">取消</button>
+          <button type="submit" class="btn btn-primary mt-2">新增</button>
+        </form>
+      </div>
+    </div>
+  </div>
 
   <script src="/javascripts/popper.js"></script>
   <script src="/javascripts/bootstrap.js"></script>
