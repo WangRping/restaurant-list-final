@@ -21,9 +21,15 @@
             width="30" height="30" class="d-inline-block align-top" alt="我的餐廳清單">
           我的餐廳清單
         </a>
+        {{#if isAuthenticated}}
         <button type="button" class="navbar-brand border-0 bg-transparent" aria-current="page" data-bs-toggle="modal"
           data-bs-target="#newRestaurantModal">
           <i class="fas fa-plus pr-2"></i> 新增餐廳</button>
+        <a href="/users/logout" class="">Logout</a>
+        {{else}}
+        <a href="/users/login" class="">Login</a>
+        {{/if}}
+
       </div>
     </nav>
 
