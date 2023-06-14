@@ -1,5 +1,6 @@
 const express = require('express')
 const sessiong = require('express-session')
+const usePassport = require('./config/passport')
 const bodyParser = require('body-parser')
 const app = express()
 const port = 3000
@@ -20,6 +21,8 @@ app.set('view engine', 'handlebars')
 app.use(sessiong({ secret: 'ThisIsMySecret', resave: false, saveUninitialized: true }))
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: true }))
+
+usePassport(app)
 app.use(routes)
 
 app.listen(port, () => {
