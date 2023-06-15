@@ -36,11 +36,11 @@
           </span>
         </div>
       </div>
-      <div class="d-flex justify-content-end">
-        <a class="me-2" href="/restaurants/{{this._id}}/edit">Edit</a>
-        <a class="me-2" href="/restaurants/{{this._id}}">Detail</a>
+      <div class="card-function d-flex justify-content-end">
+        <a class="btn btn-primary me-2" href="/restaurants/{{this._id}}/edit">Edit</a>
+        <a class="btn btn-primary me-2" href="/restaurants/{{this._id}}">Detail</a>
         <form class="me-2" action="/restaurants/{{this._id}}/delete" method="post" style="display:inline">
-          <button type="submit">Delete</button>
+          <button class="btn btn-danger" type="submit">Delete</button>
         </form>
       </div>
     </div>

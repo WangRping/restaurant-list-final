@@ -15,7 +15,7 @@
   <header>
     <!-- navigation -->
     <nav class="navbar navbar-light bg-light">
-      <div class="container d-flex justify-content-start ">
+      <div class="nav-container ">
         <a class="navbar-brand" href="/">
           <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/6227/restaurant-list-logo.png"
             width="30" height="30" class="d-inline-block align-top" alt="我的餐廳清單">
@@ -25,9 +25,9 @@
         <button type="button" class="navbar-brand border-0 bg-transparent" aria-current="page" data-bs-toggle="modal"
           data-bs-target="#newRestaurantModal">
           <i class="fas fa-plus pr-2"></i> 新增餐廳</button>
-        <a href="/users/logout" class="">Logout</a>
+        <a href="/users/logout" class="navbar-logout"> <i class="far fa-user pe-2 fs-2"></i> Logout </a>
         {{else}}
-        <a href="/users/login" class="">Login</a>
+        <a href="/users/login" class="navbar-login pr-2"><i class="fas fa-user pe-2 fs-2"></i>Login</a>
         {{/if}}
 
       </div>

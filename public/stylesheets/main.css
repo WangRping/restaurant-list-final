@@ -2,11 +2,40 @@ header {
   overflow: hidden;
 }
 
-.navbar .navbar-brand {
+.nav-container {
+  width: 80%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 3fr 1fr 1fr;
+}
+
+.navbar-brand {
+  grid-column: 1/2;
+}
+
+.nav-container>button.navbar-brand {
+  grid-column: 3/4;
+}
+
+.navbar-logout,
+.navbar-login {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  text-align: center;
+  grid-column: 4/5;
+  font-size: 1.25rem;
+}
+
+.navbar .navbar-brand,
+.navbar-logout,
+.navbar-login {
   color: #4592af;
 }
 
-.navbar .navbar-brand:hover {
+.navbar .navbar-brand:hover,
+.navbar-logout:hover,
+.navbar-login:hover {
   color: #226089;
 }
 
@@ -54,9 +83,19 @@ header {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
+.card-img-top {
+  aspect-ratio: 1.25 / 1;
+  object-fit: cover;
+}
+
 .restaurant-category {
   color: #666666;
   font-size: 0.8rem;
+}
+
+.card-function .btn-primary {
+  background: #4592af;
+  border-color: #4592af;
 }
 
 .restaurant-show-title {
