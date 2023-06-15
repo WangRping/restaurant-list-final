@@ -50,11 +50,6 @@ router.post('/register', (req, res) => {
         errors.push({ message: '這個Email已經註冊過了。' })
         res.render('register', { errors, name, email, password, confirmPassword })
       }
-      // else {
-      //   return User.create({ name, email, password })
-      //     .then(() => res.redirect('/'))
-      //     .catch(err => console.log(err))
-      // }
       return bcrypt
         .genSalt(10)
         .then(salt => bcrypt.hash(password, salt))
